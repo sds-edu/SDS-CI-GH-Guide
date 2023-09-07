@@ -4,7 +4,7 @@
 
 Welcome to this guide on Continuous Integration (CI) with GitHub Actions. In this guide, you will learn:
 
-- how to set up a GitHub Actions workflow that automates build and test processes for the backend of the address book app you created previously
+- how to set up a GitHub Actions workflow that automates build and test processes for a Node.js and Express backend application
 
 ## Prerequisites
 
@@ -13,18 +13,24 @@ Before starting, ensure that you have the following:
 1. Basic understanding of Git and version control
 2. A GitHub account
 3. Familiarity with the concepts of CI
-4. Node.js and npm installed on your local machine
+4. Having Node.js and npm installed on your local machine is recommended. You can visit this [page](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for installation instructions. You can still proceed with this guide without them installed; however, some steps in the following sections may need to be skipped.
 
-## Lab Setup
+## Initial Setup
 
-1. Fork/Clone the repository [here](https://github.com/nus-CS3219/CS3219-CI-GH-Code.git), which contains a complete backend for the address book app. The repository includes some additional test code.
+1. Download the zip file titled "cs3219-se-toolbox-ci-gh-address-book-backend.zip" from Canvas, a project for which you will be configuring CI subsequently.
+
+   > :information_source:About the project: The zip file contains the backend code of an address book application, one that is similar to what you have seen in CS2103/T or CS2113/T but developed in JavaScript. The backend is equipped with basic functionalities, including the ability to add, retrieve, edit, and delete information, by connecting to MongoDB Atlas – a cloud database. Furthermore, the `test` directory includes a set of integration tests. You will see that they are automatically executed in the CI workflow later.
+
+   :bulb:You may skip steps 2 & 3 if you do not have Node.js or npm installed.
+
 2. Install all dependencies by running `npm install` in the project directory.
+
 3. To ensure everything is set up correctly, run `npm test`. All tests should pass in the local environment since they are using a mock database.
 
 ## Setting Up GitHub Actions for CI
 
 Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The workflow will be triggered when changes are pushed to the `master` branch.
-1. Create a `.github` directory in the root of your project
+1. Unzip the file you downloaded previously, and then create a `.github` directory at the root of this project
 
 2. Inside the `.github` directory, create another directory named `workflows`
 
@@ -126,7 +132,7 @@ In these steps, we install the project dependencies using `npm ci`, a standard N
 
 ### :book: **Exercise: Observe CI with GitHub Actions**
 
-Now a GitHub Actions workflow has been set up to automate the build and test processes. Commit and push the changes to the `master` branch and observe how GitHub Actions automatically triggers and executes the CI workflow. Check the workflow's status and inspect the test results to see if the tests passed successfully.
+Now a GitHub Actions workflow has been set up to automate the build and test processes. Commit and push the changes to the `master` branch (or firstly create a new repository on GitHub if you have not done so). Observe how GitHub Actions automatically triggers and executes the CI workflow. Check the workflow's status and inspect the test results to see if the tests passed successfully.
 
 ![](./images/1.png)
 
