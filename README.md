@@ -1,5 +1,7 @@
 # CS3219 SE Toolbox - CI with GitHub Actions
+The CS3219 SE Toolbox is a collection of guides and resources to help you get started with the various tools and technologies used CS3219 - Software Engineering Principles and Patterns. 
 
+This guide will walk you through the process of setting up a GitHub Actions workflow for Continuous Integration (CI) for a Node.js and Express backend application.
 ## Learning Objectives
 
 Welcome to this guide on Continuous Integration (CI) with GitHub Actions. In this guide, you will learn:
