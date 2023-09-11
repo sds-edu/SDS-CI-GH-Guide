@@ -19,7 +19,7 @@ Before starting, ensure that you have the following:
 
 ## Initial Setup
 
-1. Fork and then clone the repository https://github.com/CS3219-AY2324S1/SE-Toolbox-CI-GH-Actions.git to your device. 
+1. Fork/clone the repository https://github.com/CS3219-AY2324S1/SE-Toolbox-CI-GH-Actions.git to your device. 
 
    > ℹ️ About the project: The repository contains the backend code of an address book application, one that is similar to what you have seen in CS2103/T or CS2113/T but developed in JavaScript. The backend is equipped with basic functionalities, including the ability to add, retrieve, edit, and delete information, by connecting to MongoDB Atlas – a cloud database. Furthermore, the `test` directory includes a set of integration tests. You will see that they are automatically executed in the CI workflow later.
 
