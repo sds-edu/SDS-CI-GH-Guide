@@ -19,7 +19,7 @@ Before starting, ensure that you have the following:
 
 ## Initial Setup
 
-1. Fork/clone the repository https://github.com/CS3219-AY2324S1/SE-Toolbox-CI-GH-Actions.git to your device. 
+1. Fork/clone the repository [https://github.com/CS3219-AY2324S1/SE-Toolbox-CI-GH-Actions.git ](https://github.com/CS3219-AY2324S1/SE-Toolbox-CI-GH-Actions.git) to your device. 
 
    > ℹ️ About the project: The repository contains the backend code of an address book application, one that is similar to what you have seen in CS2103/T or CS2113/T but developed in JavaScript. The backend is equipped with basic functionalities, including the ability to add, retrieve, edit, and delete information, by connecting to MongoDB Atlas – a cloud database. Furthermore, the `test` directory includes a set of integration tests. You will see that they are automatically executed in the CI workflow later.
 
@@ -32,13 +32,13 @@ Before starting, ensure that you have the following:
 ## Setting Up GitHub Actions for CI
 
 Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The workflow will be triggered when changes are pushed to the `master` branch.
-1. Unzip the file you downloaded previously, and then create a `.github` directory at the root of this project
+1. In the repo you just forked/cloned, create a `.github` directory at the root of this project
 
 2. Inside the `.github` directory, create another directory named `workflows`
 
 3. Inside the `workflows` directory, create a new file named `ci.yml`
 
-4. Add the following code inside `ci.yml`:
+4. Add the following code inside `ci.yml`. We will see what this code means shortly:
 
    ```yaml
    name: CI Pipeline
@@ -87,7 +87,7 @@ Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The
 
 **`name`**: This sets the name of the workflow. In our case, it’s "CI Pipeline".
 
-**`on`**: This specifies the events that trigger the workflow. We use the `push` event on the `master` branch. So, whenever code is pushed to the `master` branch, this workflow will be triggered.
+**`on`**: This specifies the events that trigger the workflow. We use the `push` event on the `master` branch. So, whenever code is pushed to the `master` branch, this workflow will be triggered. You can explore other events that can trigger a workflow e.g., a pull request etc.
 
 > ```yaml
 > jobs:
@@ -133,8 +133,7 @@ We also utilize the `supercharge/mongodb-github-action` to set up a running Mong
 In these steps, we install the project dependencies using `npm ci`, a standard Node.js command, and then run the tests using `npm run test-ci`. The definition for the `test-ci` command can be found inside the `package.json` file.
 
 ### 📖 **Observe CI with GitHub Actions**
-
-Now a GitHub Actions workflow has been set up to automate the build and test processes. Commit and push the changes to the `master` branch (or firstly create a new repository on GitHub if you have not done so). Observe how GitHub Actions automatically triggers and executes the CI workflow. Check the workflow's status and inspect the test results to see if the tests passed successfully.
+A GitHub Actions workflow has been established to automate the build and test procedures, configured to trigger when changes are pushed to the `master` branch. To observe this, make sure you have an existing remote repository set up on GitHub, or create a new one if you haven't already. Once your repository is ready, commit and push your changes to the `master` branch. As you do this, observe how GitHub Actions automatically triggers and executes the CI (Continuous Integration) workflow. You can then check the workflow's status and inspect the test results to verify if the tests have passed successfully.
 
 ![](./images/1.png)
 
@@ -155,4 +154,4 @@ Outline generated with [ChatGPT](https://openai.com/blog/chatgpt)
 
 ## Other Resources
 
-Using a matrix for your jobs: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
+[Using a matrix for your jobs](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs)
