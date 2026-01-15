@@ -59,7 +59,7 @@ Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The
          - name: Setup Node.js
            uses: actions/setup-node@v3
            with:
-             node-version: '18.x'
+             node-version: '24.x'
              cache: 'npm'
    
          - name: Start MongoDB
@@ -101,7 +101,7 @@ Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The
 >       - name: Setup Node.js
 >         uses: actions/setup-node@v3
 >         with:
->           node-version: '18.x'
+>           node-version: '24.x'
 >           cache: 'npm'
 > 
 >       - name: Start MongoDB
