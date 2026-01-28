@@ -1,7 +1,9 @@
 # CS3219 SE Toolbox - CI with GitHub Actions
-The CS3219 SE Toolbox is a collection of guides and resources to help you get started with the various tools and technologies used CS3219 - Software Engineering Principles and Patterns. 
+
+The CS3219 SE Toolbox is a collection of guides and resources to help you get started with the various tools and technologies used CS3219 - Software Engineering Principles and Patterns.
 
 This guide will walk you through the process of setting up a GitHub Actions workflow for Continuous Integration (CI) for a Node.js and Express backend application.
+
 ## Learning Objectives
 
 Welcome to this guide on Continuous Integration (CI) with GitHub Actions. In this guide, you will learn:
@@ -19,7 +21,7 @@ Before starting, ensure that you have the following:
 
 ## Initial Setup
 
-1. Fork/clone the repository [https://github.com/nus-CS3219/SE-Toolbox-CI-GH-Actions](https://github.com/nus-CS3219/SE-Toolbox-CI-GH-Actions) to your device. 
+1. Fork/clone the repository [https://github.com/nus-CS3219/SE-Toolbox-CI-GH-Actions](https://github.com/nus-CS3219/SE-Toolbox-CI-GH-Actions) to your device.
 
    > ℹ️ About the project: The repository contains the backend code of an address book application, one that is similar to what you have seen in CS2103/T or CS2113/T but developed in JavaScript. The backend is equipped with basic functionalities, including the ability to add, retrieve, edit, and delete information, by connecting to MongoDB Atlas – a cloud database. Furthermore, the `test` directory includes a set of integration tests. You will see that they are automatically executed in the CI workflow later.
 
@@ -32,6 +34,7 @@ Before starting, ensure that you have the following:
 ## Setting Up GitHub Actions for CI
 
 Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The workflow will be triggered when changes are pushed to the `master` branch.
+
 1. In the repo you just forked/cloned, create a `.github` directory at the root of this project
 
 2. Inside the `.github` directory, create another directory named `workflows`
@@ -42,34 +45,34 @@ Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The
 
    ```yaml
    name: CI Pipeline
-   
+
    on:
      push:
        branches:
          - master
-   
+
    jobs:
      build:
        runs-on: ubuntu-latest
-   
+
        steps:
          - name: Checkout repository
            uses: actions/checkout@v3
-   
+
          - name: Setup Node.js
            uses: actions/setup-node@v3
            with:
              node-version: '24.x'
              cache: 'npm'
-   
+
          - name: Start MongoDB
            uses: supercharge/mongodb-github-action@1.9.0
            with:
              mongodb-version: '6.0'
-   
+
          - name: Install dependencies
            run: npm ci
-   
+
          - name: Run Tests
            run: npm run test-ci
    ```
@@ -78,7 +81,7 @@ Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The
 
 > ```yaml
 > name: CI Pipeline
-> 
+>
 > on:
 >   push:
 >     branches:
@@ -93,17 +96,17 @@ Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The
 > jobs:
 >   build:
 >     runs-on: ubuntu-latest
-> 
+>
 >     steps:
 >       - name: Checkout repository
 >         uses: actions/checkout@v3
-> 
+>
 >       - name: Setup Node.js
 >         uses: actions/setup-node@v3
 >         with:
 >           node-version: '24.x'
 >           cache: 'npm'
-> 
+>
 >       - name: Start MongoDB
 >         uses: supercharge/mongodb-github-action@1.9.0
 >         with:
@@ -125,7 +128,7 @@ We also utilize the `supercharge/mongodb-github-action` to set up a running Mong
 > ```yaml
 >       - name: Install dependencies
 >         run: npm ci
-> 
+>
 >       - name: Run Tests
 >         run: npm run test-ci
 > ```
@@ -133,17 +136,19 @@ We also utilize the `supercharge/mongodb-github-action` to set up a running Mong
 In these steps, we install the project dependencies using `npm ci`, a standard Node.js command, and then run the tests using `npm run test-ci`. The definition for the `test-ci` command can be found inside the `package.json` file.
 
 ### 📖 **Observe CI with GitHub Actions**
+
 A GitHub Actions workflow has been established to automate the build and test procedures, configured to trigger when changes are pushed to the `master` branch. To observe this, make sure you have an existing remote repository set up on GitHub, or create a new one if you haven't already. Once your repository is ready, commit and push your changes to the `master` branch. As you do this, observe how GitHub Actions automatically triggers and executes the CI (Continuous Integration) workflow. You can then check the workflow's status and inspect the test results to verify if the tests have passed successfully.
 
-![](./images/1.png)
+![Add CI](./images/1.png)
 
-![](./images/2.png)
+![View CI](./images/2.png)
 
 <br>
 
 🎉Congratulations on successfully following this CI with GitHub Actions guide!
 
 ## References
+
 Here are the resources that were used to create this guide:
 
 GitHub Docs - Building and testing Node.js: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
