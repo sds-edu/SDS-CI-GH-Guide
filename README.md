@@ -1,6 +1,6 @@
-# CS3219 SE Toolbox - CI with GitHub Actions
+# SDS Toolbox - CI with GitHub Actions
 
-The CS3219 SE Toolbox is a collection of guides and resources to help you get started with the various tools and technologies used CS3219 - Software Engineering Principles and Patterns.
+The SDS Toolbox is a collection of guides and resources to help you get started with the various tools and technologies used in software engineering.
 
 This guide will walk you through the process of setting up a GitHub Actions workflow for Continuous Integration (CI) for a Node.js and Express backend application.
 
