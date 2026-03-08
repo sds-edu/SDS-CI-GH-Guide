@@ -1,6 +1,6 @@
 # SDS Toolbox - CI with GitHub Actions
 
-The SDS Toolbox is a collection of guides and resources to help you get started with the various tools and technologies used in software engineering.
+The Software Design School (SDS) Toolbox is a collection of guides and resources to help you get started with the various tools and technologies used in software engineering.
 
 This guide will walk you through the process of setting up a GitHub Actions workflow for Continuous Integration (CI) for a Node.js and Express backend application.
 
@@ -21,7 +21,7 @@ Before starting, ensure that you have the following:
 
 ## Initial Setup
 
-1. Fork/clone the repository [https://github.com/nus-CS3219/SE-Toolbox-CI-GH-Actions](https://github.com/nus-CS3219/SE-Toolbox-CI-GH-Actions) to your device.
+1. Fork/clone the repository [SDS-Kit-CI-GH-Actions](https://github.com/sds-edu/SDS-Kit-CI-GH-Actions) to your device.
 
    > ℹ️ About the project: The repository contains the backend code of an address book application, one that is similar to what you have seen in CS2103/T or CS2113/T but developed in JavaScript. The backend is equipped with basic functionalities, including the ability to add, retrieve, edit, and delete information, by connecting to MongoDB Atlas – a cloud database. Furthermore, the `test` directory includes a set of integration tests. You will see that they are automatically executed in the CI workflow later.
 
