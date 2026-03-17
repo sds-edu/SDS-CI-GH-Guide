@@ -155,8 +155,10 @@ GitHub Docs - Building and testing Node.js: https://docs.github.com/en/actions/a
 
 MongoDB in GitHub Actions: https://github.com/marketplace/actions/mongodb-in-github-actions
 
-Outline generated with [ChatGPT](https://openai.com/blog/chatgpt)
-
 ## Other Resources
 
 [Using a matrix for your jobs](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs)
+
+## AI Declaration
+
+Some parts of this guide were structured, formatted, and refined with the assistance of `ChatGPT`. The model was used to draft technical explanations and generate code snippets. All code snippets used in the guide and command sequences were reviewed, implemented, and tested by the teaching team to ensure accuracy and functionality.
