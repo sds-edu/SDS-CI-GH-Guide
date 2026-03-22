@@ -6,9 +6,7 @@ This guide will walk you through the process of setting up a GitHub Actions work
 
 ## Learning Objectives
 
-Welcome to this guide on Continuous Integration (CI) with GitHub Actions. In this guide, you will learn:
-
-- How to set up a GitHub Actions workflow that automates build and test processes for a Node.js and Express backend application.
+Welcome to this guide on Continuous Integration (CI) with GitHub Actions. In this guide, you will learn how to set up a GitHub Actions workflow that automates build and test processes for a Node.js and Express backend application.
 
 ## Prerequisites
 
@@ -23,7 +21,7 @@ Before starting, ensure that you have the following:
 
 1. Fork/clone the repository [SDS-Kit-CI-GH-Actions](https://github.com/sds-edu/SDS-Kit-CI-GH-Actions) to your device.
 
-   > ℹ️ About the project: The repository contains the backend code of an address book application, one that is similar to what you have seen in CS2103/T or CS2113/T but developed in JavaScript. The backend is equipped with basic functionalities, including the ability to add, retrieve, edit, and delete information, by connecting to MongoDB Atlas – a cloud database. Furthermore, the `test` directory includes a set of integration tests. You will see that they are automatically executed in the CI workflow later.
+   > ℹ️ About the project: The repository contains the backend code of an address book application developed in JavaScript. The backend is equipped with basic functionalities, including the ability to add, retrieve, edit, and delete information, by connecting to MongoDB Atlas – a cloud database. Furthermore, the `test` directory includes a set of integration tests. You will see that they are automatically executed in the CI workflow later.
 
    💡You may skip steps 2 & 3 if you do not have Node.js or npm installed.
 
@@ -135,7 +133,7 @@ We also utilize the `supercharge/mongodb-github-action` to set up a running Mong
 
 In these steps, we install the project dependencies using `npm ci`, a standard Node.js command, and then run the tests using `npm run test-ci`. The definition for the `test-ci` command can be found inside the `package.json` file.
 
-### 📖 **Observe CI with GitHub Actions**
+### **Observe CI with GitHub Actions**
 
 A GitHub Actions workflow has been established to automate the build and test procedures, configured to trigger when changes are pushed to the `master` branch. To observe this, make sure you have an existing remote repository set up on GitHub, or create a new one if you haven't already. Once your repository is ready, commit and push your changes to the `master` branch. As you do this, observe how GitHub Actions automatically triggers and executes the CI (Continuous Integration) workflow. You can then check the workflow's status and inspect the test results to verify if the tests have passed successfully.
 
@@ -151,9 +149,8 @@ A GitHub Actions workflow has been established to automate the build and test pr
 
 Here are the resources that were used to create this guide:
 
-GitHub Docs - Building and testing Node.js: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-MongoDB in GitHub Actions: https://github.com/marketplace/actions/mongodb-in-github-actions
+1. [GitHub Docs - Building and testing Node.js](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs)
+2. [MongoDB in GitHub Actions](https://github.com/marketplace/actions/mongodb-in-github-actions)
 
 ## Other Resources
 
