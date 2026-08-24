@@ -48,6 +48,9 @@ Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The
      push:
        branches:
          - master
+     pull_request:
+       branches:
+         - master
 
    jobs:
      build:
@@ -55,16 +58,16 @@ Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The
 
        steps:
          - name: Checkout repository
-           uses: actions/checkout@v3
+           uses: actions/checkout@v7
 
          - name: Setup Node.js
-           uses: actions/setup-node@v3
+           uses: actions/setup-node@v7
            with:
              node-version: '24.x'
              cache: 'npm'
 
          - name: Start MongoDB
-           uses: supercharge/mongodb-github-action@1.9.0
+           uses: supercharge/mongodb-github-action@1.12.1
            with:
              mongodb-version: '6.0'
 
@@ -84,11 +87,14 @@ Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The
 >   push:
 >     branches:
 >       - master
+>   pull_request:
+>     branches:
+>       - master
 > ```
 
 **`name`**: This sets the name of the workflow. In our case, it’s "CI Pipeline".
 
-**`on`**: This specifies the events that trigger the workflow. We use the `push` event on the `master` branch. So, whenever code is pushed to the `master` branch, this workflow will be triggered. You can explore other events that can trigger a workflow e.g., a pull request etc.
+**`on`**: This specifies the events that trigger the workflow. We use the `push` event on the `master` branch, so whenever code is pushed to `master`, this workflow will be triggered. We also use the `pull_request` event on the `master` branch, so the workflow runs on any pull request targeting `master` as well, letting you catch failures before code is merged. You can explore other events that can trigger a workflow in the [GitHub Actions documentation](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows).
 
 > ```yaml
 > jobs:
@@ -97,16 +103,16 @@ Now, let's set up a GitHub Actions workflow for Continuous Integration (CI). The
 >
 >     steps:
 >       - name: Checkout repository
->         uses: actions/checkout@v3
+>         uses: actions/checkout@v7
 >
 >       - name: Setup Node.js
->         uses: actions/setup-node@v3
+>         uses: actions/setup-node@v7
 >         with:
 >           node-version: '24.x'
 >           cache: 'npm'
 >
 >       - name: Start MongoDB
->         uses: supercharge/mongodb-github-action@1.9.0
+>         uses: supercharge/mongodb-github-action@1.12.1
 >         with:
 >           mongodb-version: '6.0'
 > ```
@@ -158,4 +164,4 @@ Here are the resources that were used to create this guide:
 
 ## AI Declaration
 
-Some parts of this guide were structured, formatted, and refined with the assistance of `ChatGPT`. The model was used to draft technical explanations and generate code snippets. All code snippets used in the guide and command sequences were reviewed, implemented, and tested by the teaching team to ensure accuracy and functionality.
+Some parts of this guide were structured, formatted, and refined with the assistance of `ChatGPT` and `Claude`. The models were used to draft technical explanations and generate code snippets. All code snippets used in the guide and command sequences were reviewed, implemented, and tested by the teaching team to ensure accuracy and functionality.
